@@ -1,0 +1,14 @@
+CREATE TABLE Genre(
+  genre_id INT(7) NOT NULL AUTO_INCREMENT,
+  genre_mei VARCHAR(100) NOT NULL,
+  PRIMARY KEY(genre_id)
+);
+
+CREATE TABLE Music(
+  music_id INT(7) NOT NULL AUTO_INCREMENT,
+  music_mei VARCHAR(100) NOT NULL,
+  music_art VARCHAR(100) NOT NULL,
+  genre_id INT(7) NOT NULL,
+  PRIMARY KEY(music_id),
+  FOREIGN KEY(genre_id) REFERENCES Genre(genre_id)
+);
